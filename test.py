@@ -67,12 +67,12 @@ if choice == 'D':
     print('________________________________________________________________')
     print('   ------------   Monthly Payment Breakdown ------------        ')  
     print('Year    Month    Principal & Interest     Principal         Interest        Principal Remaining       Total Interest')
-    for x in range(MY + 1):
-        x = x + 1
-        month = 30
-        for y in range(month + 1):
-            y = y + 1 
-            print(' ',x, '     ',y, '        ','{0:.2f}'.format(row4), '                ','{0:.2f}'.format(Principal), '          ','{0:.2f}'.format(Interest), '           ','{0:.2f}'.format(Principal_Remaining), '           ','{0:.2f}'.format(Total_Interest))
+    for x in range(MY):
+        #x = x + 1
+        month = 12
+        for y in range(month):
+            #y = y + 1 
+            print(' ',x+1, '     ',y+1, '        ','{0:.2f}'.format(row4), '                ','{0:.2f}'.format(Principal), '          ','{0:.2f}'.format(Interest), '           ','{0:.2f}'.format(Principal_Remaining), '           ','{0:.2f}'.format(Total_Interest))
             LA = LA - Principal
             Interest = ((IR / 12) / 100) * LA
             Principal = row4 - Interest
@@ -86,6 +86,19 @@ elif choice == 'S':
     print('________________________________________________________________')
     print('   ------------   Summary Payment Schedule  ------------        ') 
     print('Year              Total Principal                       Total Interest')
+    for x in range(MY + 1):
+        
+        month = 12
+        for y in range(month):
+            LA = LA - Principal
+            Interest = ((IR / 12) / 100) * LA
+            Principal = row4 - Interest
+            Total_Principal = Total_Principal + Principal
+            Total_Interest = Total_Interest + Interest
+            Principal_Remaining = LA - Principal
+            Total_Interest = Total_Interest + Interest
+        
+        print(' ',x+1,'              ','{0:.2f}'.format(Total_Principal), '           ','{0:.2f}'.format(Total_Interest))
     
 
     
