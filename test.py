@@ -83,10 +83,13 @@ if choice == 'D':
 
 
 elif choice == 'S':
+    Total_Principal = 0
+    Total_Interest = 0
+
     print('________________________________________________________________')
     print('   ------------   Summary Payment Schedule  ------------        ') 
     print('Year              Total Principal                       Total Interest')
-    for x in range(MY + 1):
+    for x in range(MY):
         
         month = 12
         for y in range(month):
@@ -98,7 +101,7 @@ elif choice == 'S':
             Principal_Remaining = LA - Principal
             Total_Interest = Total_Interest + Interest
         
-        print(' ',x+1,'              ','{0:.2f}'.format(Total_Principal), '           ','{0:.2f}'.format(Total_Interest))
+        print(' ',x+1,'                ','{0:.2f}'.format(Total_Principal), '                          ','{0:.2f}'.format(Total_Interest))
     
 
     
