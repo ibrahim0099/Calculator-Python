@@ -2,19 +2,19 @@ import math
 import pandas
 
 
-#HPP = input('Enter house purchase price: ')
-#DP = input('Enter down payment:  ')
-#IR = input('Enter interest rate (without the % sign):  ')
-#MY = input('Enter term of mortgage in years:  ')
-#TR = input('Enter tax rate on home (without the % sign):   ')
-#HI = input('Enter home insurance (per year):   ')
+HPP = input('Enter house purchase price: ')
+DP = input('Enter down payment:  ')
+IR = input('Enter interest rate (without the % sign):  ')
+MY = input('Enter term of mortgage in years:  ')
+TR = input('Enter tax rate on home (without the % sign):   ')
+HI = input('Enter home insurance (per year):   ')
 
-HPP = 250000
-DP = 50000
-IR = 3.708
-MY = 30
-TR = 1.04
-HI = 600
+#HPP = 250000
+#DP = 50000
+#IR = 3.708
+#MY = 30
+#TR = 1.04
+#HI = 600
 
 
 # Loan Remaining 
@@ -58,7 +58,7 @@ print('   in total payments (' , LA , 'would be for the original loan')
 print('   amount and ' , GrandTotal , 'in interest).')
 
 choice = input('Do you want a Detailed Payment Schedule or a Summary Payment Schedule (D or S): ')
-
+Totall = LA
 Interest = ((IR / 12) / 100) * LA
 Principal = row4 - Interest
 Principal_Remaining = LA - Principal
@@ -84,24 +84,36 @@ if choice == 'D':
 
 elif choice == 'S':
     Total_Principal = 0
-    Total_Interest = 0
+    Total_Interestt = 0
 
     print('________________________________________________________________')
     print('   ------------   Summary Payment Schedule  ------------        ') 
     print('Year              Total Principal                       Total Interest')
     for x in range(MY):
+        Total_Principal = 0
         
         month = 12
         for y in range(month):
-            LA = LA - Principal
-            Interest = ((IR / 12) / 100) * LA
             Principal = row4 - Interest
+            LA = LA - Principal
+            
+                
             Total_Principal = Total_Principal + Principal
-            Total_Interest = Total_Interest + Interest
+            Total_Interestt = Total_Interestt + Interest
+            Interest = ((IR / 12) / 100) * LA
             Principal_Remaining = LA - Principal
-            Total_Interest = Total_Interest + Interest
+
         
-        print(' ',x+1,'                ','{0:.2f}'.format(Total_Principal), '                          ','{0:.2f}'.format(Total_Interest))
+                
+
+        
+                
+
+           
+        
+        print(' ',x+1,'                ','{0:.2f}'.format(Total_Principal), '                          ','{0:.2f}'.format(Total_Interestt))
+
+    print('Grand Totals:      ', '{0:.2f}'.format(Totall), '                          ','{0:.2f}'.format(GrandTotal))
     
 
     
