@@ -16,7 +16,10 @@ MY = 30
 TR = 1.04
 HI = 600
 
+
+
 LA = HPP - DP
+I = ((IR / 12) / 100) * LA
 #calculate principle & interest
 i = (IR / 12) / 100
 nper = MY * 12
@@ -45,14 +48,14 @@ GrandTotal = row4 * nper
 
 print('________________________________________________________________')
 print('   ------------   Monthly Payment Breakdown ------------        ')
-print('   Principal and Interest:        $')
-print('   Monthly Tax:                   $')
-print('   Monthly Insurance:             $')
-print('   Total:                         $')
+print('   Principal and Interest:        $',row4)
+print('   Monthly Tax:                   $',var3 )
+print('   Monthly Insurance:             $',tem1 )
+print('   Total:                         $',Total )
 print('   ------------   Monthly Payment Breakdown ------------        ')
-print('   By the end of the 30-year period, you would pay ')
-print('   in total payments ($200,000.00 would be for the original loan')
-print('   amount and $131,729.62 in interest).')
+print('   By the end of the ' , MY , '-year period, you would pay ')
+print('   in total payments (' , LA , 'would be for the original loan')
+print('   amount and ' , GrandTotal , 'in interest).')
 
 choice = input('Do you want a Detailed Payment Schedule or a Summary Payment Schedule (D or S): ')
 
